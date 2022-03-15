@@ -1,6 +1,7 @@
 import express from "express"
 import cors from 'cors'
 import router from "./src/rotas/index.js"
+import errorHandler from "./src/handlers/errorHandler.js"
 
 const app = express()
 
@@ -11,5 +12,6 @@ app.use(express.urlencoded({
 }))
 
 app.use('/', router)
+app.use(errorHandler.notFound)
 
 export default app

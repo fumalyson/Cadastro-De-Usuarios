@@ -9,7 +9,10 @@ const rotas = router
         })
     })
     .get('/user', pessoaController.get)
-    .post('/user', pessoaController.insert)
+    .get('/user/:id', pessoaController.getById)
+    .post('/register', pessoaController.insert)
+    .put('/user/:id', pessoaController.update)
+    .delete('/user/:id', pessoaController.delete)
 
 
 
